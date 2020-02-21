@@ -5,13 +5,8 @@ const countState = {
 };
 
 function reducer(state, action){
-    if (action.type === 'inc') {
-        return {count: state.count + 1}
-    } else if (action.type === 'dec') {
-        return {count: state.count - 1}
-    } else {
-        return 'Введите правильный action'
-    }
+    if (action.type === 'inc') return {count: state.count + 1};
+    if (action.type === 'dec') return {count: state.count - 1};
 }
 
 function ReducerCounter() {

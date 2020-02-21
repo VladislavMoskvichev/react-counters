@@ -35,8 +35,41 @@
   height: 30px;
 }
 
-.appWrapper {
+.hooksWrapper {
   display: flex;
   justify-content: space-around;
 
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #61dafb;
+  height: 75px;
+}
+
+.title {
+  padding: 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.links {
+  text-align: center;
+  padding: 0 20px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0 20px;
+}
+
+a:hover {
+  color: #fff;
+}
+
+a:active {
+  color: steelblue;
 }

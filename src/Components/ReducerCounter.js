@@ -1,4 +1,4 @@
-import React, {useReducer} from 'react';
+import React, {useState , useReducer} from 'react';
 
 const countState = {
     count: 0
@@ -12,7 +12,7 @@ function reducer(state, action){
     } else {
         return 'Введите правильный action'
     }
-};
+}
 
 function ReducerCounter() {
     const [state, dispatch] = useReducer(reducer, countState);
@@ -26,7 +26,7 @@ function ReducerCounter() {
                 <button onClick={() => dispatch({type: 'inc'})} className="button plus">
                     +
                 </button>
-                <button onClick={() => dispatch({type: 'dec'})} className="button substr">
+                <button onClick={() => state.count > 0 ? dispatch({type: 'dec'}) : null} className="button substr">
                     -
                 </button>
             </div>
@@ -34,4 +34,4 @@ function ReducerCounter() {
     );
 }
 
-export default ReducerCounter();
+export default ReducerCounter;

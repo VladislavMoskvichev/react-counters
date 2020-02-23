@@ -45,8 +45,6 @@ class StateCounter extends Component {
             </div>
         )
     }
-
 }
-
 
 export default StateCounter;

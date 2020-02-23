@@ -4,6 +4,7 @@ import StateCounter from "./Components/StateCounter";
 import HookCounter from "./Components/HookCounter";
 import ReducerCounter from "./Components/ReducerCounter";
 import Header from "./Components/Header";
+import ReduxCounter from "./Components/ReduxCounter";
 import {Route} from "react-router-dom";
 
 
@@ -15,6 +16,7 @@ function App() {
                 <Route path="/stateCounter" component={StateCounter}/>
                 <Route path="/hookCounter" component={HookCounter}/>
                 <Route path="/reducerCounter" component={ReducerCounter}/>
+                <Route path="/reduxCounter" component={ReduxCounter}/>
             </div>
         </div>
     )

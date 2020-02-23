@@ -12,6 +12,7 @@ function Header() {
                     <NavLink to="/stateCounter">state counter</NavLink>
                     <NavLink to="/hookCounter">hook counter</NavLink>
                     <NavLink to="/reducerCounter">reducer counter</NavLink>
+                    <NavLink to="/reduxCounter" >redux counter</NavLink>
                 </nav>
             </header>
         </div>

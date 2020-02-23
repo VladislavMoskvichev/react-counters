@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
 import {store} from "./Components/ReduxCounter";
 
-let rerender = () => {
+const rerender = () => {
     ReactDOM.render(
         <BrowserRouter>
             <App/>

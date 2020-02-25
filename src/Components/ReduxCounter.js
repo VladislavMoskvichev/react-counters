@@ -1,13 +1,13 @@
 import React from 'react';
 import {createStore} from "redux";
 
-const reducer = (state = 0, action) => {
+const counter = (state = 0, action) => {
     if (action.type === 'inc') return state + 1;
     if (action.type === 'dec' && state > 0) return state - 1;
     return state;
 };
 
-export const store = createStore(reducer);
+export const store = createStore(counter);
 
 function ReduxCounter() {
     return (

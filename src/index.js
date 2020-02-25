@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
 import {store} from "./Components/ReduxCounter";
 
-const rerender = () => {
+const render = () => {
     ReactDOM.render(
         <BrowserRouter>
             <App/>
@@ -15,7 +15,7 @@ const rerender = () => {
         document.getElementById('root'));
 };
 
-rerender(store.getState());
-store.subscribe(rerender);
+store.subscribe(render);
+render();
 
 serviceWorker.unregister();

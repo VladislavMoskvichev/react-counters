@@ -17,8 +17,6 @@ const reducer = (state = initialState, action) => {
     return state;
 };
 const store = createStore(reducer);
-store.dispatch({type: 'INCREMENT'});
-store.dispatch({type: 'DECREMENT'});
 
 ReactDOM.render(
     <BrowserRouter>

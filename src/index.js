@@ -4,18 +4,30 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom";
-import {store} from "./Components/ReduxCounter";
+import {Provider} from "react-redux";
+// import {store} from "./Components/ReduxCounter";
+import {createStore} from "redux";
 
-const render = () => {
-    ReactDOM.render(
-        <BrowserRouter>
-            <App/>
-        </BrowserRouter>,
-
-        document.getElementById('root'));
+const initialState = {
+    count: 0
 };
+const reducer = (state = initialState, action) => {
+    if (action.type === 'INCREMENT') return {count: state.count + 1};
+    if (action.type === 'DECREMENT') return {count: state.count - 1};
+    return state;
+};
+const store = createStore(reducer);
+store.dispatch({type: 'INCREMENT'});
+store.dispatch({type: 'DECREMENT'});
 
-store.subscribe(render);
-render();
+ReactDOM.render(
+    <BrowserRouter>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </BrowserRouter>,
+
+    document.getElementById('root'));
+
 
 serviceWorker.unregister();

@@ -1,31 +1,47 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {createStore} from "redux";
+import {connect} from 'react-redux';
 
-const counter = (state = 0, action) => {
-    if (action.type === 'inc') return state + 1;
-    if (action.type === 'dec' && state > 0) return state - 1;
-    return state;
+const mapStateToProps = (state) => {
+    return {
+        count: state.count
+    }
 };
 
-export const store = createStore(counter);
+class ReduxCounter extends Component {
+    constructor() {
+        super();
+    }
 
-function ReduxCounter() {
-    return (
-        <div className="flexWrapper">
-            <p>Redux Counter</p>
-            <h1 className="digit">
-                {store.getState()}
-            </h1>
-            <div className="buttons">
-                <button onClick={() => store.dispatch({type: 'inc'})} className="button plus">
-                    +
-                </button>
-                <button onClick={() => store.dispatch({type: 'dec'})} className="button substr">
-                    -
-                </button>
+    actionIncrementCount = () => {
+        this.props.dispatch({type: 'INCREMENT'})
+    };
+
+    actionDecrementCount = () =>  {
+        this.props.dispatch({type: 'DECREMENT'})
+    };
+
+    render() {
+        return (
+            <div className="flexWrapper">
+                <p>Redux Counter</p>
+                <h1 className="digit">
+                    {this.props.count}
+                </h1>
+                <div className="buttons">
+                    <button className="button plus"
+                            onClick={this.actionIncrementCount}>
+                        +
+                    </button>
+                    <button className="button substr"
+                            onClick={this.props.count > 0 ? this.actionDecrementCount : null}>
+                        -
+                    </button>
+                </div>
             </div>
-        </div>
-    );
+        )
+    }
 }
 
+export const WrappedReduxCounterComponent = connect(mapStateToProps)(ReduxCounter);
 export default ReduxCounter;

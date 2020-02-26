@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-// import {createStore} from "redux";
 import {connect} from 'react-redux';
+import {actionDecrementCount, actionIncrementCount} from "./actions/countActions";
 
 const mapStateToProps = (state) => {
     return {
@@ -9,17 +9,6 @@ const mapStateToProps = (state) => {
 };
 
 class ReduxCounter extends Component {
-    constructor() {
-        super();
-    }
-
-    actionIncrementCount = () => {
-        this.props.dispatch({type: 'INCREMENT'})
-    };
-
-    actionDecrementCount = () =>  {
-        this.props.dispatch({type: 'DECREMENT'})
-    };
 
     render() {
         return (
@@ -30,11 +19,11 @@ class ReduxCounter extends Component {
                 </h1>
                 <div className="buttons">
                     <button className="button plus"
-                            onClick={this.actionIncrementCount}>
+                            onClick={actionIncrementCount}>
                         +
                     </button>
                     <button className="button substr"
-                            onClick={this.props.count > 0 ? this.actionDecrementCount : null}>
+                            onClick={this.props.count > 0 ? actionDecrementCount : null}>
                         -
                     </button>
                 </div>
@@ -44,4 +33,3 @@ class ReduxCounter extends Component {
 }
 
 export const WrappedReduxCounterComponent = connect(mapStateToProps)(ReduxCounter);
-export default ReduxCounter;

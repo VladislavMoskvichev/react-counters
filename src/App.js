@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import StateCounter from "./Components/StateCounter";
-import HookCounter from "./Components/HookCounter";
-import ReducerCounter from "./Components/ReducerCounter";
-import Header from "./Components/Header";
-import ReduxCounter, {WrappedReduxCounterComponent} from "./Components/ReduxCounter";
+import StateCounter from "./Components/StateCounter/StateCounter";
+import HookCounter from "./Components/HookCounter/HookCounter";
+import ReducerCounter from "./Components/ReducerCounter/ReducerCounter";
+import Header from "./Components/Header/Header";
+import  {WrappedReduxCounterComponent} from "./Components/ReduxCounter/ReduxCounter";
 import {Route} from "react-router-dom";
 
 function App() {

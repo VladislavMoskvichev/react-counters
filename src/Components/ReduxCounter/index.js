@@ -8,6 +8,13 @@ const mapStateToProps = (state) => {
     }
 };
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        increment: () => dispatch(actionIncrementCount()),
+        decrement: () => dispatch(actionDecrementCount()),
+    }
+};
+
 class ReduxCounter extends Component {
 
     render() {
@@ -19,11 +26,11 @@ class ReduxCounter extends Component {
                 </h1>
                 <div className="buttons">
                     <button className="button plus"
-                            onClick={actionIncrementCount}>
+                            onClick={this.props.increment}>
                         +
                     </button>
                     <button className="button substr"
-                            onClick={this.props.count > 0 ? actionDecrementCount : null}>
+                            onClick={this.props.count > 0 ? this.props.decrement : null}>
                         -
                     </button>
                 </div>
@@ -32,4 +39,4 @@ class ReduxCounter extends Component {
     }
 }
 
-export const WrappedReduxCounterComponent = connect(mapStateToProps)(ReduxCounter);
+export const WrappedReduxCounterComponent = connect(mapStateToProps, mapDispatchToProps)(ReduxCounter);

@@ -13,7 +13,7 @@ function HookCounter() {
                 <button onClick={() => changeCounter(counter + 1)} className="button plus">
                     +
                 </button>
-                <button onClick={() => counter === 0 ? null : changeCounter(counter - 1) } className="button substr">
+                <button onClick={() => counter > 0 ? changeCounter(counter - 1) : null} className="button substr">
                     -
                 </button>
             </div>

@@ -1,8 +1,10 @@
-import {store} from "../store/store";
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
 
 export const actionIncrementCount = () => {
-    store.dispatch({type: 'INCREMENT'})
+    return {type: INCREMENT}
 };
 export const actionDecrementCount = () =>  {
-    store.dispatch({type: 'DECREMENT'})
+    return {type: DECREMENT}
 };
+

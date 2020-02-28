@@ -5,9 +5,14 @@ const countState = {
 };
 
 function reducer(state, action){
-    if (action.type === 'inc') return {count: state.count + 1};
-    if (action.type === 'dec') return {count: state.count - 1};
-    return state;
+    switch (action.type) {
+        case 'inc':
+            return {count: state.count + 1};
+        case 'dec':
+            return {count: state.count - 1};
+        default:
+            return state;
+    }
 }
 
 function ReducerCounter() {

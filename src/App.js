@@ -1,21 +1,21 @@
 import React from 'react';
 import './App.css';
-import StateCounter from "./Components/StateCounter/StateCounter";
-import HookCounter from "./Components/HookCounter/HookCounter";
-import ReducerCounter from "./Components/ReducerCounter/ReducerCounter";
-import Header from "./Components/Header/Header";
-import  {WrappedReduxCounterComponent} from "./Components/ReduxCounter/ReduxCounter";
+import  {WrappedReduxCounterComponent} from "./Components/ReduxCounter";
 import {Route} from "react-router-dom";
+import StateCounter from "./Components/StateCounter";
+import HookCounter from "./Components/HookCounter";
+import ReducerCounter from "./Components/ReducerCounter";
+import Header from "./Components/Header";
 
 function App() {
     return (
         <div className="appWrapper">
             <Header/>
             <div className="hooksWrapper">
-                <Route path="/stateCounter" component={StateCounter}/>
-                <Route path="/hookCounter" component={HookCounter}/>
-                <Route path="/reducerCounter" component={ReducerCounter}/>
-                <Route path="/reduxCounter" component={WrappedReduxCounterComponent}/>
+                <Route path="/stateCounter" render={() => <StateCounter/>}/>
+                <Route path="/hookCounter" render={() => <HookCounter/>}/>
+                <Route path="/reducerCounter" render={() => <ReducerCounter/>}/>
+                <Route path="/reduxCounter" render={() => <WrappedReduxCounterComponent/>}/>
             </div>
         </div>
     )

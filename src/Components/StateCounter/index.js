@@ -6,7 +6,7 @@ class StateCounter extends Component {
 
         this.state = {
             counter: 0,
-        }
+        };
         this.addClick = this.addClick.bind(this);
         this.substrClick = this.substrClick.bind(this);
     }
@@ -38,7 +38,7 @@ class StateCounter extends Component {
                     <button onClick={this.addClick} className="button plus">
                         +
                     </button>
-                    <button onClick={this.state.counter === 0 ? null : this.substrClick} className="button substr">
+                    <button onClick={this.state.counter > 0 ? this.substrClick : null} className="button substr">
                         -
                     </button>
                 </div>

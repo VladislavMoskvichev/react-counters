@@ -1,4 +1,4 @@
-import {initialState} from "../store/store";
+import {initialState} from "../store";
 import {DECREMENT, INCREMENT} from "../actions/countActions";
 
 export const countReducer = (state = initialState, action) => {

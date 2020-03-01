@@ -18,19 +18,20 @@ const mapDispatchToProps = (dispatch) => {
 class ReduxCounter extends Component {
 
     render() {
+        const {increment, decrement, count} = this.props;
         return (
             <div className="flexWrapper">
                 <p>Redux Counter</p>
                 <h1 className="digit">
-                    {this.props.count}
+                    {count}
                 </h1>
                 <div className="buttons">
                     <button className="button plus"
-                            onClick={this.props.increment}>
+                            onClick={increment}>
                         +
                     </button>
                     <button className="button substr"
-                            onClick={this.props.count > 0 ? this.props.decrement : null}>
+                            onClick={count > 0 ? decrement : null}>
                         -
                     </button>
                 </div>

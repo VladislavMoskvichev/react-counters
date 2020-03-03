@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import  {WrappedReduxCounterComponent} from "./Components/ReduxCounter";
-import {Route} from "react-router-dom";
-import StateCounter from "./Components/StateCounter";
-import HookCounter from "./Components/HookCounter";
-import ReducerCounter from "./Components/ReducerCounter";
-import Header from "./Components/Header";
+import Route from 'react-router-dom/es/Route';
+import WrappedReduxCounterComponent from './Components/ReduxCounter';
+import StateCounter from './Components/StateCounter';
+import HookCounter from './Components/HookCounter';
+import ReducerCounter from './Components/ReducerCounter';
+import Header from './Components/Header';
 
 function App() {
-    return (
+  return (
         <div className="appWrapper">
             <Header/>
             <div className="hooksWrapper">
@@ -18,7 +18,7 @@ function App() {
                 <Route path="/reduxCounter" render={() => <WrappedReduxCounterComponent/>}/>
             </div>
         </div>
-    )
+  );
 }
 
 export default App;

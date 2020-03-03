@@ -1,25 +1,11 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {actionDecrementCount, actionIncrementCount} from "./actions/countActions";
-
-const mapStateToProps = (state) => {
-    return {
-        count: state.count
-    }
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        increment: () => dispatch(actionIncrementCount()),
-        decrement: () => dispatch(actionDecrementCount()),
-    }
-};
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { actionDecrementCount, actionIncrementCount } from './actions/countActions';
 
 class ReduxCounter extends Component {
-
-    render() {
-        const {increment, decrement, count} = this.props;
-        return (
+  render() {
+    const { increment, decrement, count } = this.props;
+    return (
             <div className="flexWrapper">
                 <p>Redux Counter</p>
                 <h1 className="digit">
@@ -36,8 +22,23 @@ class ReduxCounter extends Component {
                     </button>
                 </div>
             </div>
-        )
-    }
+    );
+  }
 }
 
-export const WrappedReduxCounterComponent = connect(mapStateToProps, mapDispatchToProps)(ReduxCounter);
+const mapStateToProps = (state) => ({
+  count: state.count,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  increment: () => dispatch(actionIncrementCount()),
+  decrement: () => dispatch(actionDecrementCount()),
+});
+
+
+const WrappedReduxCounterComponent = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(ReduxCounter);
+
+export { WrappedReduxCounterComponent as default };
